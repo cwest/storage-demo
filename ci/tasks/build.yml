@@ -15,5 +15,5 @@ run:
   - -exc
   - |
     cd source-code \
-    && ./mvnw package \
+    && mvn package \
     && mv target/storage-demo*.jar ../artifact/storage-demo.jar
