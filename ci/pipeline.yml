@@ -26,5 +26,5 @@ jobs:
   - put: deploy-to-pcf
     params:
       path: artifact/storage-demo.jar
-      current_app_name: casey-storage-demo
+      current_app_name: casey-storage-sample
       manifest: source-code/manifest.yml
