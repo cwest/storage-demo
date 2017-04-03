@@ -1,11 +1,11 @@
 ---
 resources:
-- name: here-is-my-source-code
+- name: source-code
   type: git
   source:
-    uri: https://github.com/cwest/cfenv-spring
+    uri: https://github.com/cwest/storage-demo
     branch: master
-- name: i-do-not-care-how
+- name: deploy-to-pcf
   type: cf
   source:
     api: {{pcf-api}}
@@ -20,17 +20,17 @@ resources:
     interval: 2m
 
 jobs:
-- name: run-it-in-the-cloud-for-me
+- name: storage-demo
   max_in_flight: 1
   plan:
   - get: frequently
     trigger: true
-  - get: here-is-my-source-code
+  - get: source-code
     trigger: true
   - task: build
-    file: here-is-my-source-code/ci/tasks/build.yml
-  - put: i-do-not-care-how
+    file: source-code/ci/tasks/build.yml
+  - put: deploy-to-pcf
     params:
-      path: jar/cfenv.jar
-      current_app_name: cfenv-spring
-      manifest: here-is-my-source-code/manifest.yml
+      path: artifact/storage-demo.jar
+      current_app_name: casey-storage-demo
+      manifest: source-code/manifest.yml
