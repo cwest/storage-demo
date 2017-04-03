@@ -1,0 +1,19 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: java
+    tag: 8-alpine
+inputs:
+- name: here-is-my-source-code
+outputs:
+- name: jar
+run:
+  path: sh
+  args:
+  - -exc
+  - |
+    cd here-is-my-source-code \
+    && ./mvnw package \
+    && mv target/cfenv*.jar ../jar/cfenv.jar

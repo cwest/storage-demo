@@ -1,0 +1,6 @@
+---
+applications:
+  - name: casey-storage-sample
+    path: target/storage-demo-0.0.1-SNAPSHOT.jar
+    buildpack: java_buildpack_offline
+    memory: 1G
