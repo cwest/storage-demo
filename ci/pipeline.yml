@@ -14,17 +14,11 @@ resources:
     password: {{pcf-password}}
     organization: {{pcf-organization}}
     space: {{pcf-space}}
-- name: frequently
-  type: time
-  source:
-    interval: 2m
 
 jobs:
 - name: storage-demo
   max_in_flight: 1
   plan:
-  - get: frequently
-    trigger: true
   - get: source-code
     trigger: true
   - task: build
