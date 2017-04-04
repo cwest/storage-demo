@@ -19,6 +19,8 @@ jobs:
     params:
       path: artifact/storage-demo.jar
       current_app_name: casey-storage-sample
+      host: casey-storage-sample
+      domain: apps.gcp.cfpu.sh
       manifest: source-code/manifest.yml
       object_store: storage-service
       object_store_role: storage.objectAdmin
