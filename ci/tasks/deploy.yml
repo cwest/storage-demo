@@ -13,6 +13,6 @@ run:
   args:
   - -exc
   - |
-    cf api $api --skip-ssl-validation=$skip_cert_check \
+    cf api $api --skip-ssl-validation \
     && cf login -u $username -p $password \
     && cf target -o $organization -s $space
