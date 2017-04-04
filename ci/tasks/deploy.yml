@@ -13,4 +13,6 @@ run:
   args:
   - -exc
   - |
-    echo $current_app_name
+    cf api $api \
+    && cf login -u $username -p $password \
+    && cf target -o $organization -s $space
