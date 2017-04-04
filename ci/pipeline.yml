@@ -20,6 +20,8 @@ jobs:
       path: artifact/storage-demo.jar
       current_app_name: casey-storage-sample
       manifest: source-code/manifest.yml
+      object_store: storage-service
+      object_store_role: storage.objectAdmin
       api: {{pcf-api}}
       skip_cert_check: true
       username: {{pcf-username}}
