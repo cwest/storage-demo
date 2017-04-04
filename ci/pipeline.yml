@@ -7,7 +7,7 @@ resources:
     branch: master
 
 jobs:
-- name: storage-demo
+- name: deployment
   max_in_flight: 1
   plan:
   - get: source-code
