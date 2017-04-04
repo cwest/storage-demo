@@ -5,15 +5,6 @@ resources:
   source:
     uri: https://github.com/cwest/storage-demo
     branch: master
-- name: deploy-to-pcf
-  type: cf
-  source:
-    api: {{pcf-api}}
-    skip_cert_check: true
-    username: {{pcf-username}}
-    password: {{pcf-password}}
-    organization: {{pcf-organization}}
-    space: {{pcf-space}}
 
 jobs:
 - name: storage-demo
@@ -23,8 +14,15 @@ jobs:
     trigger: true
   - task: build
     file: source-code/ci/tasks/build.yml
-  - put: deploy-to-pcf
+  - task: deploy-to-pcf
+    file: source-code/ci/tasks/deploy.yml
     params:
       path: artifact/storage-demo.jar
       current_app_name: casey-storage-sample
       manifest: source-code/manifest.yml
+      api: {{pcf-api}}
+      skip_cert_check: true
+      username: {{pcf-username}}
+      password: {{pcf-password}}
+      organization: {{pcf-organization}}
+      space: {{pcf-space}}

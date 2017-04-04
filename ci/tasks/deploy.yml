@@ -1,0 +1,16 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: concourse/cf-resource
+    tag: latest
+inputs:
+- name: artifact
+- name: source-code
+run:
+  path: sh
+  args:
+  - -exc
+  - |
+    echo $current_app_name
