@@ -6,5 +6,5 @@ management:
     enabled: false
 google:
   credentials:
-    bucket-name: ${vcap.services.google-storage.credentials.bucket_name}
-    private-key: ${vcap.services.google-storage.credentials.PrivateKeyData}
+    bucket-name: ${vcap.services.storage-service.credentials.bucket_name}
+    private-key: ${vcap.services.storage-service.credentials.PrivateKeyData}
