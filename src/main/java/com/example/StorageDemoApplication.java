@@ -41,13 +41,13 @@ public class StorageDemoApplication {
 
         @RequestMapping("/upload")
         public StorageObject upload(HttpServletRequest req) {
-            UriComponents url = ServletUriComponentsBuilder.fromServletMapping(req).path("/metrics").build();
+            String url = "https://www.google.com/finance/info?q=GOOG";
 
             // Generate a random name for the JSON upload
             String objectName = UUID.randomUUID().toString().concat(".json");
 
             // Get a snapshot of the metrics endpoint from actuator
-            String metricsJson = new RestTemplate().getForObject(url.toString(), String.class);
+            String metricsJson = new RestTemplate().getForObject(url, String.class);
             InputStream objectData = new ByteArrayInputStream(metricsJson.getBytes());
 
             // Upload the metrics snapshot to Google Storage
