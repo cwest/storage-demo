@@ -7,12 +7,12 @@ public class CloudFoundryDetails {
 
     private final int instance;
     private final String version;
-    private final Integer storageValue;
+    private final Integer objectCount;
 
-    public CloudFoundryDetails(int instance, String version, Integer storageValue) {
+    public CloudFoundryDetails(int instance, String version, Integer objectCount) {
         this.instance = instance;
         this.version = version;
-        this.storageValue = storageValue;
+        this.objectCount = objectCount;
     }
 
     public int getInstance() {
@@ -23,7 +23,7 @@ public class CloudFoundryDetails {
         return version.split("-")[0];
     }
 
-    public Integer getStorageValue() {
-        return storageValue;
+    public Integer getObjectCount() {
+        return objectCount;
     }
 }
