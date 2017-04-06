@@ -1,0 +1,9 @@
+{
+  "groups": [
+    {
+      "name": "google",
+      "type": "com.example.config.GoogleCloudProperties",
+      "sourceType": "com.example.config.GoogleCloudProperties"
+    }
+  ]
+}

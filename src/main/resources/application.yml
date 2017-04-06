@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: storage-demo
+management:
+  security:
+    enabled: false
+google:
+  credentials:
+    bucket-name: ${vcap.services.google-storage.credentials.bucket_name}
+    private-key: ${vcap.services.google-storage.credentials.PrivateKeyData}
