@@ -54,10 +54,5 @@ public class StorageDemoApplication {
             return gcpManager.uploadObject(objectName, objectData);
         }
 
-        @RequestMapping("/ouch")
-        public void ouch() {
-            System.exit(0);
-        }
-
     }
 }
