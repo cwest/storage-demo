@@ -9,4 +9,3 @@ cf delete-orphaned-routes -f
 
 fly -t concourse destroy-pipeline -p storage-sample
 fly -t concourse set-pipeline -p storage-sample -c ci/pipeline.yml -l ~/.gcp-config.yml
-fly -t concourse unpause-pipeline -p storage-sample
