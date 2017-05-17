@@ -13,22 +13,16 @@ run:
   args:
   - -exc
   - |
-    # Authenticate to our CF Instance
     cf api $api --skip-ssl-validation \
     && cf login -u $username -p $password -o $organization -s $space \
 
-    # Rename currently running
     && cf rename $current_app_name $current_app_name-existing \
 
-    # Stage our app
     && cf push $current_app_name -p $path -f $manifest --no-start \
 
-    # Connect to backing services
     && cf bind-service $current_app_name $object_store -c '{"role": "'$object_store_role'"}' \
 
-    # Start new version
     && cf start $current_app_name \
 
-    # Replace app serving requests
     && cf map-route $current_app_name $domain --hostname $host \
     && cf delete -f $current_app_name-existing
