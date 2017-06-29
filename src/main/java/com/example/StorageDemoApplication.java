@@ -39,11 +39,6 @@ public class StorageDemoApplication {
             return new CloudFoundryDetails(instance, version, Iterables.size(gcpManager.getAppBucketItems()));
         }
 
-        @RequestMapping("/ouch")
-        public void ouch() {
-            System.exit(0);
-        }
-
         @RequestMapping("/upload")
         public StorageObject upload(HttpServletRequest req) {
             String url = "https://www.google.com/finance/info?q=GOOG";
