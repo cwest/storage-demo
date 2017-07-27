@@ -53,5 +53,10 @@ public class StorageDemoApplication {
             // Upload the metrics snapshot to Google Storage
             return gcpManager.uploadObject(objectName, objectData);
         }
+
+        @RequestMapping("/ouch")
+        public void ouch () {
+            System.exit(0);
+        }
     }
 }
