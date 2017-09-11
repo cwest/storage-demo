@@ -41,7 +41,7 @@ public class StorageDemoApplication {
 
         @RequestMapping("/upload")
         public StorageObject upload(HttpServletRequest req) {
-            String url = "https://www.google.com/finance/info?q=GOOG";
+            String url = "https://www.google.com/finance?q=GOOG&output=json";
 
             // Generate a random name for the JSON upload
             String objectName = UUID.randomUUID().toString().concat(".json");
